@@ -1,0 +1,1 @@
+.\venv\Scripts\python.exe .\Lesson_01\server\manage.py runserver
