@@ -1,2 +1,2 @@
-.\venv\Scripts\python.exe .\Lesson_01\server\manage.py runserver
+.\venv\Scripts\python.exe .\project\server\manage.py runserver
 pause
