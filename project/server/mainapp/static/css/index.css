@@ -1,0 +1,13 @@
+
+p0 {
+  font-family: "Terminal Dosis";
+  font-size: 24px;
+  font-style: italic;
+  text-align: left;
+  color: green;
+}
+
+p {
+  text-align: center;
+  color: red;
+} 
