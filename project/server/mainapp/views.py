@@ -4,17 +4,17 @@ from django.shortcuts import render
 def index(request):
     return render(
         request,
-        'index.html'
+        'mainapp/index.html'
     )
 
 def about(request):
     return render(
         request,
-        'about.html'
+        'mainapp/about.html'
     )
 
 def contacts(request):
     return render(
         request,
-        'contacts.html'
+        'mainapp/contacts.html'
     )
