@@ -83,7 +83,7 @@ def category_update_view(request, pk):
         form = CategoryModelForm(
             request.POST,
             request.FILES,
-            initial=obj
+            instance=obj
         )
         if form.is_valid():
             form.save()
