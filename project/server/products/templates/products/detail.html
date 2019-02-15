@@ -19,5 +19,10 @@
         {{ object.cost }}
     </span>
     {% endif %}
+    {% if object.image %}
+    <span class="product__image">
+        <img src="../../media/{{ object.image }}">
+    </span>
+    {% endif %}
 </div>
 {% endblock %}

@@ -16,3 +16,7 @@
 .product__cost {
     margin-top: 16px;
 }
+
+img {
+    border-radius: 50%;
+}
