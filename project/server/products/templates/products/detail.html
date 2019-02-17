@@ -9,19 +9,19 @@
 {% block page_content %}
 <div class="product">
     <h1 class="product__name">
-        {{ object.name|title }}
+        {{ inst.name|title }}
     </h1>
     <span class="product__description">
-        {{ object.description }}
+        {{ inst.description }}
     </span>
-    {% if object.cost %}
+    {% if inst.cost %}
     <span class="product__cost">
-        {{ object.cost }}
+        {{ inst.cost }}
     </span>
     {% endif %}
-    {% if object.image %}
+    {% if inst.image %}
     <span class="product__image">
-        <img src="../../media/{{ object.image }}">
+        <img src="../../media/{{ inst.image }}">
     </span>
     {% endif %}
 </div>

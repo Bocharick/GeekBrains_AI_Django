@@ -6,3 +6,10 @@
 2) run **run_server_Ubuntu.sh** or **run_server_lesson_Windows.bat** depending on your OS  
 3) ?  
 4) Profit  
+
+
+
+
+P.S. Database login-password:
+django
+geekbrains

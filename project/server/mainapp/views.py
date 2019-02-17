@@ -1,14 +1,29 @@
-from django.http import HttpResponse
 from django.template import Template, Context
-from django.template.loader import render_to_string, get_template
+from django.template.loader import get_template, render_to_string
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(
-        request,
+    # template = Template(
+    #     'Hello {{ name }}'
+    # )
+    # context = Context({
+    #     'name': 'Anton'
+    # })
+    template = get_template(
         'mainapp/index.html'
     )
+    context = {
+        'name': 'Proverka'
+    }
+    return HttpResponse(
+        template.render(context)
+    )
+    # return render(
+    #     request,
+    #     'main/index.html'
+    # )
 
 def about(request):
     return render(

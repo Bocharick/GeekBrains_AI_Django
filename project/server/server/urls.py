@@ -21,7 +21,9 @@ from products.views import (product_list_view)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('catalog/', include('products.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('products/', include('products.urls')),
+    path('categories/', include('products.urls.categories')),
     path('', include('mainapp.urls')),
 ]
 
