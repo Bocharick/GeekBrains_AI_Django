@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Category
+from products.models import Category
 
 
 class CategoryForm(forms.Form):
@@ -14,7 +14,11 @@ class CategoryForm(forms.Form):
     )
 
     description = forms.CharField(
-        widget=forms.widgets.Textarea()
+        widget=forms.widgets.Textarea(
+            attrs={
+                'class': 'model-form'
+            }
+        )
     )
 
 
@@ -28,7 +32,7 @@ class CategoryModelForm(forms.ModelForm):
                     'class': 'model-form'
                 }
             ),
-            'description': forms.widgets.TextInput(
+            'description': forms.widgets.Textarea(
                 attrs={
                     'class': 'model-form'
                 }
