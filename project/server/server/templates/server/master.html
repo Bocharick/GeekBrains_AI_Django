@@ -30,7 +30,7 @@
                     </li>
                     <li class="navigation-list__item">
                         <span class="navigation-list__item-text">
-                            Каталог
+                            Витрина
                         </span>
                         <a href="{% url 'products:list' %}" class="navigation-list__item-link">
                         </a>
@@ -64,6 +64,8 @@
             </span>
         </footer>
     </div>
+    {% block page_js %}
+    {% endblock %}
 </body>
 
 </html>

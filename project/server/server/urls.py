@@ -17,9 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from products.views import (product_list_view)
+from products.views import (
+    product_list_view
+)
+
+router = [
+    path('products/', include('products.routes')),
+]
 
 urlpatterns = [
+    path('api/', include(router)),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('products/', include('products.urls')),
