@@ -23,6 +23,7 @@ from products.views import (
 
 router = [
     path('products/', include('products.routes')),
+    path('categories/', include('products.routes.categories')),
 ]
 
 urlpatterns = [
