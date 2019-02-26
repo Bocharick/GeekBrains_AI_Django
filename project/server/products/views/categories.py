@@ -8,10 +8,37 @@ from django.views.generic import (
 )
 from django.core.paginator import Paginator
 from django.urls import reverse, reverse_lazy
-from django.http import Http404
+from django.http import Http404, JsonResponse
 
 from products.models import Category
 from products.forms import CategoryForm, CategoryModelForm
+
+
+class RestCategoryListView(ListView):
+    model = Category
+
+    def serialize_object_list(self, queryset):
+        return list(
+            map(
+                lambda itm: {
+                    'id': itm.id,
+                    'name': itm.name
+                },
+                queryset
+            )
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super(RestCategoryListView, self).get_context_data(**kwargs)
+        object_list = context.get('object_list')
+
+        data = {}
+        data['results'] = self.serialize_object_list(object_list)
+
+        return data
+
+    def render_to_response(self, context, **response_kwargs):
+        return JsonResponse(context)
 
 
 class CategoryListView(ListView):
@@ -29,7 +56,7 @@ class CategoryDetailView(DetailView):
         products = obj.product_set.all()
         page = self.request.GET.get('page')
 
-        paginator = Paginator(products, 2)
+        paginator = Paginator(products, 10)
 
         page_obj = paginator.get_page(page)
 
